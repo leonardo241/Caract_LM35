@@ -15,8 +15,7 @@ j = 1;
 tStart = tic; % Registro de tiempo para el ciclo for
 
 for j = 1:1:90 % Se pueden modificar las iteraciones para ajustar el tiempo
-                 % Teniendo en cuenta que cada iteración equivale a cinco
-                 % segundos.
+
     sensor = readVoltage(a,volt); % Leer el puerto analógico 0 de arduino.
     Volt = sensor * 1000; % Convertir la señal de voltios a milivoltios.
     Temp = Volt / 10; %Convertir voltaje a tempreratura.
@@ -24,7 +23,7 @@ for j = 1:1:90 % Se pueden modificar las iteraciones para ajustar el tiempo
     disp(Temp); fprintf('°C \n'); % Motrar valor de temperatura.
     data_volt(j) = Volt; % Escritura de los datos de voltaje en un vector.
     data_temp(j) = Temp; % Escritura de los datos temperatura en un vector.
-    Iteraciones(j) = t; % Escritura del tiempo en un vector.
+    Iteraciones(j) = t; % Escritura de la cantidad de iteraciones en un vector.
     t = t + 1;
 end
 
